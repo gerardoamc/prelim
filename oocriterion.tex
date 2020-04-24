@@ -146,8 +146,16 @@ The SSIC offers a way of capturing in a more accurate manner the different failu
 
 \begin{figure}[h]
 	\center
-	\includegraphics[height=6cm]{Obst_SLS}
+	\includegraphics[height=7.5cm]{Obst_SLS}
 	\caption{Failure surface for SLS developed through the SSIC \cite{Obst2018}} \label{fig:OOCSLS}
+\end{figure}
+
+Recent unpublished work by Osswald \emph{et al.} \cite{Osswald2020} generated a failure envelope for Multi-Jet Fusion (MJF) parts produced using PA12, and compared it to the surface obtained by Obst \emph{et al.} \cite{Obst2018}. Results indicate that, while both techniques are based on Powder Based Fusion (PBF) and use the same material, the envelopes for each AM technology were distinct, serving as proof that these technologies are not as comparable under complex loading conditions as previously assumed. The transverse-axial interaction for the MJF case was significantly less pronounced than for SLS, further reinforcing that each AM technique needs to be studied in a case-by-case basis in terms of mechanical failure characterization. 
+
+\begin{figure}[h]
+	\center
+	\includegraphics[height=10cm]{pbfcomp}
+	\caption{Comparison of the $\sigma_{22} - \tau_{12}$ interaction for SLS and MJF PA12 parts \cite{Osswald2020}} \label{fig:pbfcomp}
 \end{figure}
 
 In 2019, Mazzei Capote \emph{et al.} \cite{MazzeiCapote2019} developed a failure envelope for FFF parts produced using a customized ABS filament produced in-house. Specimens were produced using either a commercially available desktop FFF printer (Lulzbot TAZ5, USA), or a customized 6-axis robotic printing solution whenever the bead orientation was hard to achieve using a \emph{2.5-D} machine. The robotic printer was based on a 6-axis robot (ABB IRB-120, Switzerland) and fitted with a stationary printhead mounted on an aluminum frame, chosen to be the same extruder from the traditional printer (LulzBot TAZ Single Extruder Tool Head v2, 0.5 mm nozzle, USA) to minimize machine influence on the results \cite{VanHulle2017}. The printing equipment can be seen in Figure \ref{fig:PrintEquip}. 
@@ -169,6 +177,8 @@ In 2019, Mazzei Capote \emph{et al.} \cite{MazzeiCapote2019} developed a failure
 % Nomenclature introduced in this chapter:
 \nomenclature[A]{SSIC}{Stress-Stress Interaction Criterion}% 
 \nomenclature[A]{GKC}{Gol'denblat-Kopnov Criterion}% 
+\nomenclature[A]{MJF}{Multi-Jet Fusion}% 
+\nomenclature[A]{PBF}{Powder Bed Fusion}% 
 
 % Symbols introduced in this chapter:
 \nomenclature[S]{$X_t$}{Tensile strength in the 1-1 direction \nomunit{$MPa$}}

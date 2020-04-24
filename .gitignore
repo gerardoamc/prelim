@@ -13,3 +13,7 @@
 *.blg
 *.run.xml
 *.toc
+*.bib
+
+#Include only prelim bib file
+!prelim.bib
