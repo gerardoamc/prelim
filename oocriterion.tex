@@ -146,34 +146,45 @@ The SSIC offers a way of capturing in a more accurate manner the different failu
 
 \begin{figure}[h]
 	\center
-	\includegraphics[height=7.5cm]{Obst_SLS}
+	\includegraphics[height=6cm]{Obst_SLS}
 	\caption{Failure surface for SLS developed through the SSIC \cite{Obst2018}} \label{fig:OOCSLS}
 \end{figure}
 
 Recent unpublished work by Osswald \emph{et al.} \cite{Osswald2020} generated a failure envelope for Multi-Jet Fusion (MJF) parts produced using PA12, and compared it to the surface obtained by Obst \emph{et al.} \cite{Obst2018}. Results indicate that, while both techniques are based on Powder Based Fusion (PBF) and use the same material, the envelopes for each AM technology were distinct, serving as proof that these technologies are not as comparable under complex loading conditions as previously assumed. The transverse-axial interaction for the MJF case was significantly less pronounced than for SLS, further reinforcing that each AM technique needs to be studied in a case-by-case basis in terms of mechanical failure characterization. 
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 	\center
 	\includegraphics[height=10cm]{pbfcomp}
 	\caption{Comparison of the $\sigma_{22} - \tau_{12}$ interaction for SLS and MJF PA12 parts \cite{Osswald2020}} \label{fig:pbfcomp}
 \end{figure}
 
-In 2019, Mazzei Capote \emph{et al.} \cite{MazzeiCapote2019} developed a failure envelope for FFF parts produced using a customized ABS filament produced in-house. Specimens were produced using either a commercially available desktop FFF printer (Lulzbot TAZ5, USA), or a customized 6-axis robotic printing solution whenever the bead orientation was hard to achieve using a \emph{2.5-D} machine. The robotic printer was based on a 6-axis robot (ABB IRB-120, Switzerland) and fitted with a stationary printhead mounted on an aluminum frame, chosen to be the same extruder from the traditional printer (LulzBot TAZ Single Extruder Tool Head v2, 0.5 mm nozzle, USA) to minimize machine influence on the results \cite{VanHulle2017}. The printing equipment can be seen in Figure \ref{fig:PrintEquip}. 
+In 2019, Mazzei Capote \emph{et al.} \cite{MazzeiCapote2019} developed a failure envelope for FFF parts produced using a customized ABS filament produced in-house. Specimens were produced using either a commercially available desktop FFF printer (Lulzbot TAZ5, USA), or a customized 6-axis robotic printing solution whenever the bead orientation was hard to achieve using a \emph{2.5-D} machine. The robotic printer was based on a 6-axis robot (ABB IRB-120, Switzerland) and fitted with a stationary printhead mounted on an aluminum frame, chosen to be the same extruder from the traditional printer (LulzBot TAZ Single Extruder Tool Head v2, 0.5 mm nozzle, USA) to minimize machine influence on the results \cite{VanHulle2017}. The final surface obtained showed significant stress interactions in certain directions. Starting with the $\sigma_{11}$-$\sigma_{22}$ plane, it can be seen that the failure envelope has a slight tilt. Refer to Figure~\ref{fig:1122plane} for a graph showing the calculated failure envelope, including the experimental data for reference. This tilt is evidence of an interaction between the transverse and longitudinal stresses. The conclusion is that FFF parts produced with the print parameters used in the study should show strengthening when loaded bi-axially in compression.
 
 \begin{figure}[h]
 	\center
-	\subfloat[TAZ 5 Printer \cite{Lulzbot2018}\label{fig:taz5}]{%
-		\includegraphics[height=6cm, keepaspectratio]{TAZ_5}
-	}
-	\hfill
-	\subfloat[6-axis robotic printer \label{fig:Otto}]{%
-		\includegraphics[height=6cm, keepaspectratio]{Otto}
-	}
-	\caption{Printing equipment used by Mazzei Capote \emph{et al.} \cite{MazzeiCapote2019}} \label{fig:PrintEquip}
+	\includegraphics[width=0.9\linewidth, keepaspectratio]{11_22plane}
+	\captionsetup{justification=centering} %long caption
+	\caption[failure envelope in the $\sigma_{11}$-$\sigma_{22}$ plane]{$\sigma_{11}$-$\sigma_{22}$ plane including data for reference.} \label{fig:1122plane}
 \end{figure}
 
+Using the results from combined loading tests plotted in the $11-12$ and $22-12$ planes allows visualization of the transverse-axial stress interactions. Beginning with the $11-12$ plane, it can be seen that the calculated interaction slope $\mu^{1112}$ equals $5.2\times 10^{-3}$, a value that's practically zero. Using this parameter, the failure surface shown in Figure \ref{fig:1112plane} can be obtained. A dashed line representing $\mu^{1112}$ is added for reference. The $22-12$ plane by comparison reveals a considerable slope. It can be seen through the use of combined loads that there is a slight decrease in the shear strength of the specimens when a tensile load is applied in the $2-2$ direction. A slope of -0.2 was obtained for $\mu^{2212}$. Figure \ref{fig:2212plane} shows the resulting surface with the data and a line with a slope of -0.2 overlaid for reference.
 
+\begin{figure}[!htbp]
+	\center
+	\includegraphics[width=\linewidth, keepaspectratio]{11_12plane}
+	\captionsetup{justification=centering} %long caption
+	\caption[failure envelope in the $\sigma_{11}$-$\tau_{12}$ plane]{$\sigma_{11}$-$\tau_{12}$ plane including data for reference.} \label{fig:1112plane}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\center
+	\includegraphics[width=\linewidth, keepaspectratio]{22_12plane}
+	\captionsetup{justification=centering} %long caption
+	\caption[failure envelope in the $\sigma_{22}$-$\tau_{12}$ plane]{$\sigma_{22}$-$\tau_{12}$ plane including data for reference.} \label{fig:2212plane}
+\end{figure}
   
+
+
 % Nomenclature introduced in this chapter:
 \nomenclature[A]{SSIC}{Stress-Stress Interaction Criterion}% 
 \nomenclature[A]{GKC}{Gol'denblat-Kopnov Criterion}% 
