@@ -1,9 +1,9 @@
 % oocriterion.tex
 \documentclass[main.tex]{subfiles}
 \begin{document}
-\chapter{Failure Criteria in AM} \label{ch:oocrit}
+\chapter{Part failure prediction in AM} \label{ch:oocrit}
 
-As described during Section \ref{sec:FC} of Chapter \ref{ch:bg}, currently available failure criteria fail to completely integrate interaction effects into the modeled failure behavior of anisotropic materials. In 2017, Paul and Tim Osswald proposed a model that attempts to overcome these limitiations \cite{Osswald2017a}. This recent failure criterion has the following characteristics:
+As described during Chapter \ref{ch:bg}, mechanical anisotropy of AM parts constitutes one of the major obstacles towards adoption of AM techniques in industry. Failure prediction through FC  one of the major  currently available failure criteria fail to completely integrate interaction effects into the modeled failure behavior of anisotropic materials. In 2017, Paul and Tim Osswald proposed a model that attempts to overcome these limitiations \cite{Osswald2017a}. This recent failure criterion has the following characteristics:
 \begin{itemize}
 	\item \textbf{Tensor based and purely mathematical}: as opposed to phenomenological or mechanistic models such as the Puck or Cuntze failure criteria.
 	\item \textbf{Based on the Gol'denblat-Kopnov model}.
@@ -183,7 +183,7 @@ Using the results from combined loading tests plotted in the $11-12$ and $22-12$
 	\caption[failure envelope in the $\sigma_{22}$-$\tau_{12}$ plane]{$\sigma_{22}$-$\tau_{12}$ plane including data for reference.} \label{fig:2212plane}
 \end{figure}
 
-The use of this envelope to predict part failure was tested by Mazzei Capote \cite{MazzeiJCompSci} \emph{et al.} in 2019. In this study, the failure function was used to estimate the failure stress of mechanical coupons loaded under tension, with a variety of raster angles being used to generate a complex loading state in the local coordinate system. Results indicated the failure prediction boundary was within 5 to 10\% of the real failure value. Results are summarized in Figure \ref{fig:jcompscir}, where the average of 5 mechanical tests per raster angle is represented in dots, and the SSIC predicted failure stress is shown in a bright red line. These are compared to simpler FC, such as the maximum stress criteria in the $\sigma_{11}$, $\sigma_{22}$, and $\tau_{12}$ directions, labeled M1-1, M2-2, and M1-2 respectively. 
+The use of this envelope to predict part failure was tested by Mazzei Capote \cite{MazzeiJCompSci} \emph{et al.} in 2019. In this study, the failure function was used to estimate the failure stress of mechanical coupons loaded under tension, with a variety of raster angles being used to generate a complex loading state in the local coordinate system. Results indicated the failure prediction boundary was within 5 to 10\% of the real value. Results are summarized in Figure \ref{fig:jcompscir}, where the average of 5 mechanical tests per raster angle is represented in a dot, and the SSIC predicted failure stress is shown in a bright red line. These are compared to simpler FC, such as the maximum stress criteria in the $\sigma_{11}$, $\sigma_{22}$, and $\tau_{12}$ directions, labeled M1-1, M2-2, and M1-2 respectively. 
 
 \begin{figure}[!htbp]
 	\center
@@ -198,7 +198,7 @@ The use of this envelope to predict part failure was tested by Mazzei Capote \ci
 \end{figure} 
 
 \pagebreak
-While the use of FC in AM is promising, its adoption has been limited in scope. Part of the problem lies in the large number of mechanical tests required to achieve a trustworthy failure envelope, as well as the requirement of specialized equipment \textendash~such as a variety of mechanical testing devices, as well as specialized printing solutions as seen in the FFF failure envelope. Chapter \ref{ch:proposal} outlines ways to streamline the process of developing a failure surface for FFF parts, and by extension, any other AM technology. This methodology can hopefully lead to a higher adoption rate of AM in industrial scenarios, where the final desired application involves complex mechanical loads upon the finished part. 
+While the use of FC in AM is promising, its adoption has been limited in scope. Part of the problem lies in the large number of mechanical tests required to achieve a trustworthy failure envelope, as well as the requirement of specialized equipment \textendash~such as a variety of mechanical testing devices, as well as specialized printing solutions as seen in the FFF failure envelope. Chapter \ref{ch:proposal} outlines proposed work aimed at predicting the mechanical response of FFF parts using machine learning methods. Some, if not all of the concepts explored could easily be extrapolated to other AM techniques. A combination of both FC and machine learning predictive methods can hopefully lead to a higher adoption rates of AM in industrial scenarios where the final desired application involves complex mechanical loads upon the finished part. 
 
 % Nomenclature introduced in this chapter:
 \nomenclature[A]{SSIC}{Stress-Stress Interaction Criterion}% 
