@@ -3,7 +3,9 @@
 \begin{document}
 \chapter{Proposed Work} \label{ch:proposal}
 
-The use of AM technologies to produce small batches of highly customized, complex parts, in a reduced development cycle results extremely attractive. While constructing failure envelopes can help overcome the wariness of industrial segments to design end-user parts, this resource is still not easy to implement, requiring a large number of mechanical tests and specialized equipment to properly map the failure behavior of a particular material. Additional complexity stems from what was shown in Section \ref{sec:SSICAM}: processing the same material under related AM technologies yields completely different failure envelopes, implying that no generalizations should be made, and each material-process pairing needs to be studied on a case-by-case basis. In general, for AM parts to be adopted, engineers have to be able to confidently assess the probability of part failure under particular loading conditions, predict the expected mechanical properties of AM parts, and understand the underlying physics of the process. None of these considerations are completely understood at the time of this work. The solutions presented in this proposal are aimed at solving one of these three issues. This work aims to provide the tools required to understand and predict properties and mechanical performance of parts manufactured through FFF. Some, if not all of the procedures developed in this work could even be extrapolated to other AM techniques. The end goal is having the framework necessary to streamline the development of failure envelopes for FFF as much as possible, making a compelling case for adoption of this technology in the production of end user parts subjected to complex loading conditions. 
+The use of AM technologies to produce small batches of highly customized, complex parts, in a reduced development cycle results extremely attractive. While constructing failure envelopes can help overcome the wariness of industrial segments to design end-user parts, this resource is still not easy to implement, requiring a large number of mechanical tests and specialized equipment to properly map the failure behavior of a particular material. Additional complexity stems from what was shown in Section \ref{sec:SSICAM}: processing the same material under related AM technologies yields completely different failure envelopes, implying that no generalizations should be made, and each material-process pairing needs to be studied on a case-by-case basis. In general, for AM parts to be adopted, engineers have to be able to confidently assess the probability of part failure under particular loading conditions, predict the expected mechanical properties of AM parts, and understand the underlying physics of the process. None of these considerations are completely understood at the time of this work.
+
+The solutions presented in this proposal are aimed at solving one of these three issues. This work aims to provide the tools required to understand and predict properties, and mechanical performance of parts manufactured through FFF. Additionally, some, if not all of the procedures developed in this work could be extrapolated to other AM techniques. The end goal is having the framework necessary to predict the mechanical response of FFF parts based on process variables measured during a print using machine learning techniques and an FFF printer modified with sensors. 
 
 \section{Objectives} \label{sec:objectives}
 
@@ -11,16 +13,24 @@ The set of printing conditions that lead to an optimal part in terms of mechanic
 
 \begin{figure}[!htbp]
 	\center
-	\includegraphics[height=6.5cm]{ML}
+	\includegraphics[height=6cm]{ML}
 	\caption{Differences between traditional programming and machine learning. \cite{Chollet2018}} \label{fig:MLvsP}
 \end{figure}
 
-The fundamental goal of this research is to predict FFF part mechanical performance by finding relations between processing conditions and strength through the use of sensors and machine learning. The success of this project would allow design engineers to confidently assess if a part manufactured through FFF will meet the mechanical requirements imposed by its intended application. This work proposes developing and using a modified printer with force and print speed sensors, as well as mechanical testing and $\mu$CT scans to generate data that can be used to train a predictive tool based on ML. This tool can then be used to predict final mechanical properties of the part based on the data generated during the print. This ML system would accept filament dimensions, printing temperature, filament force, filament velocity, print orientation, or any subset of these items as inputs, and produce final part porosity and mechanical strength in a particular load direction as outputs. These parameters were chosen based on previous work performed by Koch, Van Hulle and Rudolph \cite{Koch2017}, where the final tensile strength of FFF coupons was shown to be related to the morphology of the printed bead, which is significantly affected by processing parameters and variations in the volumetric output of the nozzle, as well as the proposed FFF melting models established by Bellini \emph{et al.} \cite{Bellini2004} and Osswald \emph{et al.} \cite{OsswaldMelting18}. The specifics of the architecture of the ML system are still under development, as it may prove useful to segment the problem into several sub-systems connected in series, in what is called a machine learning \emph{pipeline} \cite{Geron2019}. However, given the specifics of the task, one can conclude that the system will involve supervised learning applied to a regression problem, given that all the inputs to the system will consist of pre-selected attributes, and the mechanical response and/or porosity of a printed part can be treated as a target value the ML system has to be able to predict \cite{Mohammed2017}.
+The potential to apply ML solutions in the field of AM has been noted by several authors \cite{Razvi2019,Meng2020}. Example cases include design-recommendation systems, topology optimization solutions, tolerancing and manufacturability assessment, and material classification and selection \cite{Razvi2019}. The specific algorithm applied for each case varied wildly depending on the nature of the task, but in general, Support Vector Machines (SVM) and Neural Networks (NN) appear to be the most prevalent solutions.
+
+Given the factors outlined this far, the fundamental goal of this research is to predict FFF part mechanical performance by finding relations between processing conditions and strength through the use of sensors and machine learning. The success of this project would allow design engineers to confidently assess if a part manufactured through FFF will meet the mechanical requirements imposed by its intended application. This work proposes developing and using a modified printer with force and print speed sensors, as well as mechanical testing and $\mu$CT scans to generate data that can be used to train a predictive tool based on ML. This tool can then be used to predict final mechanical properties of the part based on the data generated during the print. This ML system would accept filament dimensions, printing temperature, filament force, filament velocity, print orientation, layer height, or any subset of these items as inputs, and produce final part porosity and/or mechanical strength in a particular load direction as outputs. These parameters were chosen based on previous work performed by Koch, Van Hulle and Rudolph \cite{Koch2017}, where the final tensile strength of FFF coupons was shown to be related to the morphology of the printed bead, which is significantly affected by processing parameters and variations in the volumetric output of the nozzle; research published by Sood \emph{et al.} \cite{Sood2012} where a NN was able to predict the compressive strength of FDM parts with an $R^2= 0.9977$ using layer thickness, raster angle, orientation, raster width, and air gap as inputs; as well as the proposed FFF melting models established by Bellini \emph{et al.} \cite{Bellini2004} and Osswald \emph{et al.} \cite{OsswaldMelting18}. The specifics of the architecture of the ML system are still under development, as it may prove useful to segment the problem into several sub-systems connected in series, in what is called a machine learning \emph{pipeline} \cite{Geron2019}. However, given the specifics of the task, one can conclude that the system will involve supervised learning applied to a regression problem, given that all the inputs to the system will consist of pre-selected attributes, and the mechanical response and/or porosity of a printed part can be treated as a target value the ML system has to be able to predict \cite{Mohammed2017, Meng2020}.
 
 \begin{figure}[!htbp]
 	\center
 	\includegraphics[height=3cm]{ML2}
 	\caption{Pipeline architecture for advanced ML systems \cite{Geron2019}} \label{fig:pipeline}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\center
+	\includegraphics[height=7.5cm]{SL}
+	\caption{Taxonomy of ML applications in AM \cite{Meng2020}} \label{fig:supL}
 \end{figure}
 
 \section{Preliminary results} \label{sec:prelim}
@@ -37,7 +47,7 @@ An initial set of experiments, designed to capture trends in filament force and 
 
 \begin{figure}[!htbp]
 	\center
-	\includegraphics[width=0.8\linewidth]{FD.pdf}
+	\includegraphics[width=0.7\linewidth]{FD.pdf}
 	\caption{Filament geometry information, acquired through a laser micrometer } \label{fig:FD}
 \end{figure}
 
@@ -52,8 +62,6 @@ In order to explore the effect of printing temperature and print speed upon stab
 Preliminary results show that the physical limitation of the setup lies between 20 and 25 N of force acting upon the filament. At this level of force, slippage occurs in the drive wheel mechanism that drives the material towards the nozzle.  Increases in the hot-end temperature resulted in lower force requirements to achieve elevated printing speeds, in accordance to previous research by Go and Hart, and Go \emph{et al.} in 2017 \cite{Go2017a, Go2017}. A representative plot showing a comparison between the three print temperatures selected for ABS is shown in Figure \ref{fig:absprelim}. The data presents a significant number of noise and outliers. This is an issue that is in the process of being solved.
 
 An interesting unexpected outcome of this set of preliminary experiments is that the trends shown in the data do not match any of the two major FFF melting models available in literature today: the Bellini model and the Osswald model \cite{Bellini2004, OsswaldMelting18}. In all permutations, the data for low speeds suggests a behavior similar to the Bellini model, but as the force-speed pairing increases, the trend is more akin to the Osswald model. Refer to Figure \ref{fig:meltmodes} for a schematic representing the observed behavior. More research is necessary to draw more definitive conclusions.
-
-\pagebreak
 
 \begin{figure}[!htbp]
 	\center
@@ -71,12 +79,19 @@ An interesting unexpected outcome of this set of preliminary experiments is that
 
 The following sections describe and summarize the future research direction based on the preliminary outcomes presented in this work. 
 
-\subsection{Data generation and preparation}
+\subsection{Data generation and preparation}\label{ssec:datag}
 
-As seen from the preliminary experimentation, the data generated by the machine contains a noticeable number of outliers and noise. Preliminary steps would involve implementing automated data cleaning tools that ensure that the ML solution receives optimal inputs. The cylindrical print used so far would continue to act as a benchmark print given that it minimizes the impact of accelerations in the x-y plane upon the velocity-force pairings extracted from the FFF printer. Once a solution is in place, the immediate step would be the design of a mechanical coupon that consumes as little time possible to manufacture, and that allows to capture a benchmark mechanical property through testing. An ideal initial candidate would constitute the $Y_t$ parameter used in the SSIC, given that it generally represents the weakest mechanical strength of FFF parts. To simplify testing and allow qualitative comparisons with the failure envelope developed by Mazzei Capote \emph{et al}. \cite{MazzeiCapote2019}, the same set of printing parameters will be used when possible. Porosity data from the prints will be extracted through $\mu$CT scans prior to testing under stress.
+As seen from the preliminary experimentation, the data generated by the machine contains a noticeable number of outliers and noise. Preliminary steps would involve implementing automated data cleaning tools that ensure that the ML solution receives optimal inputs. The cylindrical print used so far would continue to act as a benchmark print given that it minimizes the impact of accelerations in the x-y plane upon the velocity-force pairings extracted from the FFF printer. Once a solution is in place, the immediate step would be the design of a mechanical coupon that consumes as little time as possible to manufacture, and that allows capturing a benchmark mechanical property through testing. An ideal initial candidate would constitute the $Y_t$ parameter used in the SSIC, given that it represents the weakest mechanical strength of FFF parts. To simplify testing and allow qualitative comparisons with the failure envelope developed by Mazzei Capote \emph{et al}. \cite{MazzeiCapote2019}, the same set of printing parameters will be used when possible. Porosity data from the prints will be extracted through $\mu$CT scans prior to testing under stress. Additional data will be supplied by measuring the filament using the laser micrometer prior to each print. Once all the experimental protocols are in place, feature selection and engineering will be required to minimize the number of inputs that are fed into the system. This includes, but is not limited to data transformation and normalization, and input aggregation. Finally, the knowledge extracted from these preliminary tests can be extrapolated for additional printing conditions and mechanical responses, constituting the entirety of the raw data that will be used with the model. At this stage, the data will be sliced into training and validation subsets, using the typical ratio of 80-20 percent if possible \cite{Geron2019}.
  
-\subsection{ML architecture design}
-\subsection{ML system training and launch}
+\subsection{ML system architecture, training, and validation}\label{ssec:MLA}
+
+The following step of this work would involve using small subsets of the training data to test multiple models and algorithms in a reasonable amount of time. Performance metrics such as the mean square error or the mean absolute error would help narrow down the optimal candidate for each task \cite{Geron2019}. Depending on the outcome, the final architecture of the predictive system will be decided, including the algorithms for each segment of the machine learning pipeline if applicable. Ultimately, the final architecture of the system will be trained using the training data, and benchmarked against the validation set to check for inherent issues to the ML field, such as overfitting, and to assess the validity of the predicted outcome. The programming language of choice will be \emph{Python 3}, given its relative ease of syntax, open-source nature, as well as the availability of data science and ML libraries and resources such as \emph{NumPy, pandas, and TensorFlow}.
+
+\begin{figure}[!htbp]
+	\center
+	\includegraphics[width=0.9\linewidth]{softwareML}
+	\caption{Python ML ecosystem to be used in this work} \label{fig:python}
+\end{figure} 
 
 \section{Derived Publications}
 
@@ -92,7 +107,7 @@ The list below represents publications derived from the content of this work. Th
 
 \subsubsection{Planned publications}
 
-The following publications are under preparation to be submitted to the \emph{Additive Manufacturing} peer reviewed journal before the end of the year.
+The following publications are under preparation to be submitted to the \emph{Additive Manufacturing} peer reviewed journal before the end of the year. An additional publication will be written once the final ML system is deployed.
 
 \begin{enumerate}
 	\item \fullcite{Mazzei2020}
@@ -101,6 +116,8 @@ The following publications are under preparation to be submitted to the \emph{Ad
 %______________________________________________________________________________________________
 % Nomenclature introduced in this chapter:
 \nomenclature[A]{ML}{Machine Learning}% 
+\nomenclature[A]{SVM}{Support Vector Machines}%
+\nomenclature[A]{NN}{Neural Network}%
 
 % Symbols introduced in this chapter:
 %\nomenclature[S]{$X_t$}{Tensile strength in the 1-1 direction \nomunit{$MPa$}}

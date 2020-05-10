@@ -10,13 +10,15 @@
   \item [{FFF}]\begingroup Fused Filament Fabrication\nomeqref {0}\nompageref{2}
   \item [{GKC}]\begingroup Gol'denblat-Kopnov Criterion\nomeqref {2.5}\nompageref{20}
   \item [{MJF}]\begingroup Multi-Jet Fusion\nomeqref {2.5}\nompageref{20}
-  \item [{ML}]\begingroup Machine Learning\nomeqref {3.0}\nompageref{25}
+  \item [{ML}]\begingroup Machine Learning\nomeqref {3.0}\nompageref{29}
+  \item [{NN}]\begingroup Neural Network\nomeqref {3.0}\nompageref{29}
   \item [{PA12}]\begingroup Polyamide 12\nomeqref {0}\nompageref{2}
   \item [{PBF}]\begingroup Powder Bed Fusion\nomeqref {2.5}\nompageref{20}
   \item [{RP}]\begingroup Rapid Prototyping\nomeqref {0}\nompageref{2}
   \item [{SLA}]\begingroup Stereolithography\nomeqref {1.0}\nompageref{10}
   \item [{SLS}]\begingroup Selective Laser Sintering\nomeqref {1.0}\nompageref{10}
   \item [{SSIC}]\begingroup Stress-Stress Interaction Criterion\nomeqref {2.5}\nompageref{20}
+  \item [{SVM}]\begingroup Support Vector Machines\nomeqref {3.0}\nompageref{29}
 \nomgroup{S}
   \item [{$\mu^{1112}$}]\begingroup SSIC parameter- slope at pure shear failure in the $\sigma_{11}$ - $\tau_{12}$ plane \nomunit{$-$}\nomeqref {2.5}\nompageref{20}
   \item [{$\mu^{2212}$}]\begingroup SSIC parameter- slope at pure shear failure in the $\sigma_{22}$ - $\tau_{12}$ plane \nomunit{$-$}\nomeqref {2.5}\nompageref{20}
@@ -33,7 +35,6 @@
   \item [{$S_{45p}$}]\begingroup Positive shear strength for 45$^\circ$ specimen \nomunit{$MPa$}\nomeqref {2.5}\nompageref{20}
   \item [{$X_c$}]\begingroup Compressive strength in the 1-1 direction \nomunit{$MPa$}\nomeqref {2.5}\nompageref{20}
   \item [{$X_t$}]\begingroup Tensile strength in the 1-1 direction \nomunit{$MPa$}\nomeqref {2.5}\nompageref{20}
-  \item [{$X_t$}]\begingroup Tensile strength in the 1-1 direction \nomunit{$MPa$}\nomeqref {3.0}\nompageref{25}
   \item [{$Y_c$}]\begingroup Compressive strength in the 2-2 direction \nomunit{$MPa$}\nomeqref {2.5}\nompageref{20}
   \item [{$Y_t$}]\begingroup Tensile strength in the 2-2 direction \nomunit{$MPa$}\nomeqref {2.5}\nompageref{20}
 
